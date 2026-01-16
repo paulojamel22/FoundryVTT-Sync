@@ -1,5 +1,5 @@
 {
-  "id": "dmplace-sync",
+  "id": "foundryvtt-sync",
   "title": "DM Place - Sincronizador de Mundos do Foundry VTT",
   "description": "Envia informações do mundo para o Portal DM Place v2.0.12.",
   "version": "1.0.0",
