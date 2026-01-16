@@ -3,8 +3,8 @@ Hooks.once('ready', async function() {
 
     // Prepara os dados do mundo
     const worldData = {
-        nomeMundo: game.world.title,
-        descricao: game.world.description
+        NomeMundo: game.world.title,
+        Descricao: game.world.description
     };
 
     try {
