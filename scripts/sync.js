@@ -43,7 +43,7 @@ Hooks.once('ready', async function() {
                     <div style="font-family: 'Signika', sans-serif; text-align: justify;">
                         <p><em>Publicado em: ${cronica.data}</em></p>
                         <hr>
-                        <div style="max-height: 400px; overflow-y: auto;">
+                        <div style="max-height: 450px; max-width: 500px; overflow-y: auto;">
                             ${cronica.conteudo}
                         </div>
                     </div>
