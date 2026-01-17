@@ -29,4 +29,35 @@ Hooks.once('ready', async function() {
     } catch (err) {
         console.error("Erro ao conectar com o portal:", err);
     }
+
+    // BUSCA A ÚLTIMA NOTÍCIA
+    try {
+        const response = await fetch('https://portal.dmplace.com.br/api/Integration/UltimaSessao');
+        if (response.ok) {
+            const cronica = await response.json();
+
+            // Renderiza a janela épica para os jogadores
+            new Dialog({
+                title: `📜 Resumo da Última Sessão: ${cronica.titulo}`,
+                content: `
+                    <div style="font-family: 'Signika', sans-serif; text-align: justify;">
+                        <p><em>Publicado em: ${cronica.data}</em></p>
+                        <hr>
+                        <div style="max-height: 400px; overflow-y: auto;">
+                            ${cronica.conteudo}
+                        </div>
+                    </div>
+                `,
+                buttons: {
+                    fechar: {
+                        label: "Rumo à Aventura!",
+                        callback: () => console.log("DM Place | Jogador fechou o diário.")
+                    }
+                },
+                default: "fechar"
+            }, { width: 500 }).render(true);
+        }
+    } catch (err) {
+        console.error("Erro ao buscar crônica:", err);
+    }
 });
